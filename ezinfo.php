@@ -24,8 +24,8 @@ class SwarkInfo
     function info()
     {
         return array(
-            'Name' => 'Swark for eZ Publish 3',
-            'Version' => '1.0.0',
+            'Name' => 'Swark for eZ Publish 4',
+            'Version' => '1.0.0 beta',
             'Copyright' => 'Copyright (C) 2008 <a href="http://www.seeds.no">Seeds Consulting AS</a>',
             'License' => 'GNU General Public License v2.0'
         );

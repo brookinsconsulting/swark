@@ -21,8 +21,7 @@
 
 class SwarkOperators
 {
-    /* static public */
-    function operators()
+    static function operators()
     {
         $operators = array(
             'add_view_parameters' => 'SwarkAddViewParametersOperator',

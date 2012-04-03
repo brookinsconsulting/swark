@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkClearObjectCacheOperator extends SwarkOperator
 {
-    function SwarkClearObjectCacheOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'clear_object_cache' );
+        parent::__construct( 'clear_object_cache' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         include_once( 'kernel/classes/ezcontentobject.php' );
         eZContentObject::clearCache();

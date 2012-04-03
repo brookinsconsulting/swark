@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkIsPostRequestOperator extends SwarkOperator
 {
-    function SwarkIsPostRequestOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'is_post_request' );
+        parent::__construct( 'is_post_request' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         return ( $_SERVER['REQUEST_METHOD'] == 'POST' );
     }

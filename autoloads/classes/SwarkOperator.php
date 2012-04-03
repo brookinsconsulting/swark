@@ -21,10 +21,10 @@
 
 class SwarkOperator
 {
-    var $OperatorName = false;
-    var $Parameters;
+    private $OperatorName = false;
+    private $Parameters;
 
-    function SwarkOperator( $operatorName = false )
+    function __construct( $operatorName = false )
     {
         $this->OperatorName = $operatorName;
 
@@ -61,14 +61,13 @@ class SwarkOperator
         return array( $this->OperatorName => $this->Parameters );
     }
 
-    /* public static */
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         return $operatorValue;
     }
 
-    function modify( &$tpl, &$operatorName, &$operatorParameters, &$rootNamespace,
-                     &$currentNamespace, &$operatorValue, &$namedParameters )
+    function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace,
+                     $currentNamespace, &$operatorValue, $namedParameters )
     {
         $operatorValue = call_user_func( array( get_class( $this ), 'execute' ), $operatorValue, $namedParameters );
     }
@@ -84,8 +83,8 @@ class SwarkOperator
                                                     'element-transformation-func' => 'transformation' ) );
     }
 
-    function transformation( $operatorName, &$node, &$tpl, &$resourceData,
-                             &$element, &$lastElement, &$elementList, &$elementTree, &$parameters )
+    function transformation( $operatorName, $node, $tpl, $resourceData,
+                             $element, $lastElement, $elementList, $elementTree, $parameters )
     {
         include_once( 'extension/swark/autoloads/SwarkOperators.php' );
         
@@ -108,7 +107,7 @@ class SwarkOperator
             }
             $index++;
         }
-        $newElements[] = eZTemplateNodeTool::createCodePieceElement( "include_once( '${operatorInfo['script']}' );\n" );
+        // $newElements[] = eZTemplateNodeTool::createCodePieceElement( "include_once( '${operatorInfo['script']}' );\n" );
         $newElements[] = eZTemplateNodeTool::createCodePieceElement( "%output% = ${operatorInfo['class']}::execute( %1%, $namedParametersVarName );\n", $parameters );
         $newElements[] = eZTemplateNodeTool::createCodePieceElement( "unset( $namedParametersVarName );\n" );
 

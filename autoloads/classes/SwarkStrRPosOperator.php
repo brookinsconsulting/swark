@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkStrRPosOperator extends SwarkOperator
 {
-    function SwarkStrRPosOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'strrpos', 'needle' );
+        parent::__construct( 'strrpos', 'needle' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $pos = strrpos( $operatorValue, $namedParameters['needle'] );
         if ( $pos === false )

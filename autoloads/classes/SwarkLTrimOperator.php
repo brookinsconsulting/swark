@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkLTrimOperator extends SwarkOperator
 {
-    function SwarkLTrimOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'ltrim', 'charlist=' );
+        parent::__construct( 'ltrim', 'charlist=' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $charList = $namedParameters['charlist'];
         if ( $charList )

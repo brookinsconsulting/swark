@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkShortenWOperator extends SwarkOperator
 {
-    function SwarkShortenWOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'shortenw', 'length', 'ellipsis=...' );
+        parent::__construct( 'shortenw', 'length', 'ellipsis=...' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $length = (int) $namedParameters['length'];
         $ellipsis = $namedParameters['ellipsis'];

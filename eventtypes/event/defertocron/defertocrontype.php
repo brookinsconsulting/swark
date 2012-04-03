@@ -19,23 +19,21 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'kernel/classes/ezworkflowtype.php' );
-
-define( 'WORKFLOW_TYPE_DEFER_TO_CRON_ID', 'defertocron' );
-
 class DeferToCronType extends eZWorkflowEventType
 {
-    function DeferToCronType()
+    const WORKFLOW_TYPE_ID = 'defertocron';
+
+    function __construct()
     {
-        $this->eZWorkflowEventType( WORKFLOW_TYPE_DEFER_TO_CRON_ID, 'Defer to cron' );
+        parent::__construct( DeferToCronType::WORKFLOW_TYPE_ID, 'Defer to cron' );
     }
 
-    function execute( &$process, &$event )
+    function execute( $process, $event )
     {
-        return EZ_WORKFLOW_TYPE_STATUS_DEFERRED_TO_CRON;
+        return eZWorkflowType::STATUS_DEFERRED_TO_CRON;
     }
 }
 
-eZWorkflowEventType::registerType( WORKFLOW_TYPE_DEFER_TO_CRON_ID, 'defertocrontype' );
+eZWorkflowEventType::registerEventType( DeferToCronType::WORKFLOW_TYPE_ID, 'defertocrontype' );
 
 ?>

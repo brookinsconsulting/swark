@@ -19,17 +19,15 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkVariableNamesOperator extends SwarkOperator
 {
-    function SwarkVariableNamesOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'variable_names', 'in_debug=1' );
+        parent::__construct( 'variable_names', 'in_debug=1' );
     }
 
-    function modify( &$tpl, &$operatorName, &$operatorParameters, &$rootNamespace,
-                     &$currentNamespace, &$operatorValue, &$namedParameters )
+    function modify( $tpl, $operatorName, $operatorParameters, $rootNamespace,
+                     $currentNamespace, &$operatorValue, $namedParameters )
     {
         $variableNames = array();
         foreach ( $tpl->Variables as $nameSpace => $variables )
@@ -51,8 +49,8 @@ class SwarkVariableNamesOperator extends SwarkOperator
         }
     }                     
 
-    function transformation( $operatorName, &$node, &$tpl, &$resourceData,
-                             &$element, &$lastElement, &$elementList, &$elementTree, &$parameters )
+    function transformation( $operatorName, $node, $tpl, $resourceData,
+                             $element, $lastElement, $elementList, $elementTree, $parameters )
     {
         return false;
     }

@@ -19,18 +19,15 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkRangeOperator extends SwarkOperator
 {
-    function SwarkRangeOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'range', 'min', 'max', 'step=1' );
+        parent::__construct( 'range', 'min', 'max', 'step=1' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
-        // PHP 4 does not support $step parameter in range(), thus we cannot use it
         $min = $namedParameters['min'];
         $max = $namedParameters['max'];
         $step = $namedParameters['step'];

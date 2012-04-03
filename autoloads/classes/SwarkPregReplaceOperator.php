@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkPregReplaceOperator extends SwarkOperator
 {
-    function SwarkPregReplaceOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'preg_replace', 'search', 'replace' );
+        parent::__construct( 'preg_replace', 'search', 'replace' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         return preg_replace( $namedParameters['search'], $namedParameters['replace'], $operatorValue );
     }

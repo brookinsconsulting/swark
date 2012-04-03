@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkKRSortOperator extends SwarkOperator
 {
-    function SwarkKRSortOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'krsort' );
+        parent::__construct( 'krsort' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         krsort( $operatorValue );
         return $operatorValue;

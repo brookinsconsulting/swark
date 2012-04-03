@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkReturnOperator extends SwarkOperator
 {
-    function SwarkReturnOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'return', 'content_type=' );
+        parent::__construct( 'return', 'content_type=' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         include_once( 'lib/ezutils/classes/ezexecution.php' );
 

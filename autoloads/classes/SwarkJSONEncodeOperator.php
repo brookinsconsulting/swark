@@ -19,22 +19,19 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkJSONEncodeOperator extends SwarkOperator
 {
-    function SwarkJSONEncodeOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'json_encode' );
+        parent::__construct( 'json_encode' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         return SwarkJSONEncodeOperator::encode( $operatorValue );
     }
 
-    /* private static */
-    function encodeString( $string )
+    private static function encodeString( $string )
     {
         if ( !isset( $GLOBALS['json_codec'] ) || !$GLOBALS['json_codec'] )
         {
@@ -75,8 +72,7 @@ class SwarkJSONEncodeOperator extends SwarkOperator
         return $jsonString;
     }
 
-    /* private static */
-    function encode( $variable )
+    private static function encode( $variable )
     {
         switch( gettype( $variable ) )
         {

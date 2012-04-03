@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkAddViewParametersOperator extends SwarkOperator
 {
-    function SwarkAddViewParametersOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'add_view_parameters', 'view_parameters' );
+        parent::__construct( 'add_view_parameters', 'view_parameters' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $operatorValue = rtrim( $operatorValue, '/' );
         foreach ( $namedParameters['view_parameters'] as $key => $value )

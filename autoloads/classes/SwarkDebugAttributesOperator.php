@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkDebugAttributesOperator extends SwarkOperator
 {
-    function SwarkDebugAttributesOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'debug_attributes', 'header=Debug attributes operator', 'depth=2' );
+        parent::__construct( 'debug_attributes', 'header=Debug attributes operator', 'depth=2' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         include_once( 'lib/eztemplate/classes/eztemplateattributeoperator.php' );
 

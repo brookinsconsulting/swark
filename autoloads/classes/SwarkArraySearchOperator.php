@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkArraySearchOperator extends SwarkOperator
 {
-    function SwarkArraySearchOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'array_search', 'search', 'not_found_key=-1' );
+        parent::__construct( 'array_search', 'search', 'not_found_key=-1' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $key = array_search( $namedParameters['search'], $operatorValue );
         if ( $key === false )

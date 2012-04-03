@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkUserIDByLoginOperator extends SwarkOperator
 {
-    function SwarkUserIDByLoginOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'user_id_by_login', 'login' );
+        parent::__construct( 'user_id_by_login', 'login' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $login = $namedParameters['login'];
         if ( !$login )
@@ -40,7 +38,7 @@ class SwarkUserIDByLoginOperator extends SwarkOperator
             return false;
         }
 
-        $db =& eZDB::instance();
+        $db = eZDB::instance();
 
         $login = $db->escapeString( $login );
         $result = $db->arrayQuery( "SELECT contentobject_id FROM ezuser WHERE login='$login'" );

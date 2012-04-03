@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkRemoveArrayElementOperator extends SwarkOperator
 {
-    function SwarkRemoveArrayElementOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'remove_array_element', 'key' );
+        parent::__construct( 'remove_array_element', 'key' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         unset( $operatorValue[$namedParameters['key']] );
         return $operatorValue;

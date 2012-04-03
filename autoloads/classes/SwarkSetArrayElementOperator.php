@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkSetArrayElementOperator extends SwarkOperator
 {
-    function SwarkSetArrayElementOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'set_array_element', 'key', 'value' );
+        parent::__construct( 'set_array_element', 'key', 'value' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $operatorValue[$namedParameters['key']] = $namedParameters['value'];
         return $operatorValue;

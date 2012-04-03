@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkCurrentSiteaccessOperator extends SwarkOperator
 {
-    function SwarkCurrentSiteaccessOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'current_siteaccess' );
+        parent::__construct( 'current_siteaccess' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         return $GLOBALS['eZCurrentAccess']['name'];
     }

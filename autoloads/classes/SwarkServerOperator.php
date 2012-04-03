@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkServerOperator extends SwarkOperator
 {
-    function SwarkServerOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'server', 'variable_name' );
+        parent::__construct( 'server', 'variable_name' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $variableName = strtoupper( $namedParameters['variable_name'] );
         if ( isset( $_SERVER[$variableName] ) )

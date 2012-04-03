@@ -19,8 +19,6 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/SwarkOperators.php' );
-
 $eZTemplateOperatorArray = SwarkOperators::operators();
 
 ?>

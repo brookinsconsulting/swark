@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkSplitByLengthOperator extends SwarkOperator
 {
-    function SwarkSplitByLengthOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'split_by_length', 'length=1' );
+        parent::__construct( 'split_by_length', 'length=1' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $result = array();
         $length = $namedParameters['length'];

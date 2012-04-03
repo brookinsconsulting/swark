@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkURIPathSegmentOperator extends SwarkOperator
 {
-    function SwarkURIPathSegmentOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'uri_path_segment', 'index=-1' );
+        parent::__construct( 'uri_path_segment', 'index=-1' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         if ( preg_match( '!^([0-9a-z+-.]*:)?(//[^/]+/?)?/?((([^/?#]+)/*)*)([?#].*)?!i', $operatorValue, $matches ) )
         {

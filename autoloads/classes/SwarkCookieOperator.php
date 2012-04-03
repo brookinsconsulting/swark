@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkCookieOperator extends SwarkOperator
 {
-    function SwarkCookieOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'cookie', 'name' );
+        parent::__construct( 'cookie', 'name' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         $name = $namedParameters['name'];
         if ( isset( $_COOKIE[$name] ) )

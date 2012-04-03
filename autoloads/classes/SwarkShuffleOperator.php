@@ -19,16 +19,14 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkShuffleOperator extends SwarkOperator
 {
-    function SwarkShuffleOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'shuffle' );
+        parent::__construct( 'shuffle' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
         if ( is_array( $operatorValue ) )
         {

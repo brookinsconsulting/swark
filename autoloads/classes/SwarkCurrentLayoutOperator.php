@@ -19,18 +19,16 @@
 // MA 02110-1301, USA.
 //
 
-include_once( 'extension/swark/autoloads/classes/SwarkOperator.php' );
-
 class SwarkCurrentLayoutOperator extends SwarkOperator
 {
-    function SwarkCurrentLayoutOperator()
+    function __construct()
     {
-        $this->SwarkOperator( 'current_layout' );
+        parent::__construct( 'current_layout' );
     }
 
-    function execute( $operatorValue, $namedParameters )
+    static function execute( $operatorValue, $namedParameters )
     {
-        $res =& eZTemplateDesignResource::instance();
+        $res = eZTemplateDesignResource::instance();
         $keys = $res->keys();
         return isset( $keys['layout'] )? $keys['layout']: false;
     }
