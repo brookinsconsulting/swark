@@ -73,8 +73,7 @@ class SwarkOperators
         $eZTemplateOperatorArray = array();
         foreach ( $operators as $operatorName => $operatorClass )
         {
-            $eZTemplateOperatorArray[$operatorName] = array( 'script' => "extension/swark/autoloads/classes/$operatorClass.php",
-                                                             'class' => $operatorClass,
+            $eZTemplateOperatorArray[$operatorName] = array( 'class' => $operatorClass,
                                                              'operator_names' => array( $operatorName ) );
         }
 

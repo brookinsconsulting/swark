@@ -37,9 +37,6 @@ class AutoPriorityType extends eZWorkflowEventType
 
         if ( $version == 1 )
         {
-            include_once( 'kernel/classes/ezcontentobject.php' );
-            include_once( 'kernel/classes/ezcontentcache.php' );
-
             $object = eZContentObject::fetch( $objectID );
             $nodeID = $object->attribute( 'main_node_id' );
             $parentNodeID = $object->attribute( 'main_parent_node_id' );
