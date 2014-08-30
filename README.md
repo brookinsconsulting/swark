@@ -125,7 +125,9 @@ The following workflow events are implemented in the current version:
 - autopriority
 - defertocron
 
-Check out the complete documentation of the extension at: http://www.seeds.no/eng/ez-publish/downloads/swark/swark-documentation
+Check out the complete documentation of the extension at: https://github.com/brookinsconsulting/swark/wiki
+
+Additional documentation available in the doc directory.
 
 Please post any bug reports, feature requests or any other feedback as an issue: https://github.com/brookinsconsulting/swark/issues
 
