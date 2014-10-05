@@ -1,15 +1,15 @@
-swark
+Swark
 =====
 
-The swark extension implements many template operators and a couple of workflow events which are needed very often, yet missing in eZ Publish. 
+The Swark extension implements many template operators and a couple of workflow events which are needed very often, yet missing in eZ Publish.
 
 
 Version
 =====
 
-The current version of swark is 1.0.1
+The current version of Swark is 1.0.2
 
-Last Major update: August 30, 2014
+Last Major update: October 05, 2014
 
 The master and 5.x branches are compatible with eZ Publish 5.x+
 
@@ -21,7 +21,7 @@ The 3.x branch is compatible with eZ Publish 3.x
 Copyright
 =====
 
-swark is copyright 2008 Seeds Consulting AS and 1999 - 2015 Brookins Consulting
+Swark is copyright 2008 Seeds Consulting AS and 1999 - 2015 Brookins Consulting
 
 See: doc/COPYRIGHT for more information on the terms of the copyright and license
 
@@ -29,29 +29,29 @@ See: doc/COPYRIGHT for more information on the terms of the copyright and licens
 License
 =====
 
-swark is licensed under the GNU General Public License.
+Swark is licensed under the GNU General Public License.
 
 The complete license agreement is included in the doc/LICENSE file.
 
-swark is free software: you can redistribute it and/or modify
+Swark is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License.
 
-swark is distributed in the hope that it will be useful,
+Swark is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 The GNU GPL gives you the right to use, modify and redistribute
-swark under certain conditions. The GNU GPL license
+Swark under certain conditions. The GNU GPL license
 is distributed with the software, see the file doc/LICENSE.
 
 It is also available at http://www.gnu.org/licenses/gpl.txt
 
 You should have received a copy of the GNU General Public License
-along with swark in doc/LICENSE.  If not, see http://www.gnu.org/licenses/.
+along with Swark in doc/LICENSE.  If not, see http://www.gnu.org/licenses/.
 
-Using swark under the terms of the GNU GPL is free (as in freedom).
+Using Swark under the terms of the GNU GPL is free (as in freedom).
 
 For more information or questions please contact
 license@brookinsconsulting.com
@@ -60,7 +60,7 @@ license@brookinsconsulting.com
 Requirements
 =====
 
-The following requirements exists for using BC Google Video Sitemap extension:
+The following requirements exists for using the Swark extension:
 
 o  eZ Publish version:
 

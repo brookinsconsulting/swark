@@ -796,13 +796,44 @@ input|json_encode
 </pre>
 </div>
 <div class="section">
+<h3><a id="id42" name="id42">Alternate Usage</a></h3>
+<pre class="literal-block">
+json_encode( input )
+</pre>
+</div>
+<div class="section">
 <h3><a id="id43" name="id43">Parameters</a></h3>
-<p>None.</p>
+<blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="77%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>value</td>
+<td>The variable type input to transform into json (array, object, string, etc)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 </div>
 <div class="section">
 <h3><a id="id44" name="id44">Examples</a></h3>
 <pre class="literal-block">
 {array( hash( 'a', 1, 'b', 2 ), 'Test', false(), 1.2345 )|json_encode}
+</pre>
+<p>Returns [{&quot;a&quot;:1,&quot;b&quot;:2},&quot;Test&quot;,false,1.234500].</p>
+<hr />
+<pre class="literal-block">
+{json_encode( array( hash( 'a', 1, 'b', 2 ), 'Test', false(), 1.2345 ) )}
 </pre>
 <p>Returns [{&quot;a&quot;:1,&quot;b&quot;:2},&quot;Test&quot;,false,1.234500].</p>
 <hr /></div>

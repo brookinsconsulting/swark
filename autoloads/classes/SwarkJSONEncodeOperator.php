@@ -23,12 +23,24 @@ class SwarkJSONEncodeOperator extends SwarkOperator
 {
     function __construct()
     {
-        parent::__construct( 'json_encode' );
+        parent::__construct( 'json_encode', 'value' );
     }
 
     static function execute( $operatorValue, $namedParameters )
     {
-        return SwarkJSONEncodeOperator::encode( $operatorValue );
+        if ( $operatorValue === NULL && $namedParameters['value'] !== NULL )
+        {
+            $operatorValue = $namedParameters['value'];
+        }
+
+        if ( function_exists( 'json_encode' ) )
+        {
+            return json_encode( $operatorValue );
+        }
+        else
+        {
+            return SwarkJSONEncodeOperator::encode( $operatorValue );
+        }
     }
 
     private static function encodeString( $string )
