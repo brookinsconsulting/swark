@@ -35,7 +35,7 @@ class SwarkServerOperator extends SwarkOperator
         }
         else
         {
-            eZDebug::writeWarning( "Server variable $variableName does not exist.", 'Server Operator' );
+            eZDebug::writeDebug( "Server variable $variableName does not exist.", 'Server Operator' );
             return false;
         }
     }
