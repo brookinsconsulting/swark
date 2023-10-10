@@ -108,7 +108,7 @@ class SwarkOperator
             $index++;
         }
         // $newElements[] = eZTemplateNodeTool::createCodePieceElement( "include_once( '${operatorInfo['script']}' );\n" );
-        $newElements[] = eZTemplateNodeTool::createCodePieceElement( "%output% = ${operatorInfo['class']}::execute( %1%, $namedParametersVarName );\n", $parameters );
+        $newElements[] = eZTemplateNodeTool::createCodePieceElement( "%output% = {$operatorInfo['class']}::execute( %1%, $namedParametersVarName );\n", $parameters );
         $newElements[] = eZTemplateNodeTool::createCodePieceElement( "unset( $namedParametersVarName );\n" );
 
         return $newElements;
